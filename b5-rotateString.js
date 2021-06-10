@@ -4,7 +4,6 @@ function rotateString() {
   string = string[string.length - 1] + subString;
   return string;
 }
-// let rs = rotateString(string);
 let count = 1;
 let printReSult = setInterval(() => {
   console.log(rotateString(string));

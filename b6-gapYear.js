@@ -4,4 +4,5 @@ function isGapYear(year){
 }
 
 console.log(isGapYear(400));
+console.log(isGapYear(100));
 

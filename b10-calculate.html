@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculate multiplicatin and division</title>
+</head>
+
+<script>
+    function division() {
+        let num1 = +document.getElementById('1stNumber').value;
+        let num2 = +document.getElementById('2ndNumber').value;
+        document.getElementById('result').innerHTML = `${num1}/${num2} = ${num1 / num2}`;
+    }
+    function multiple() {
+        let num1 = +document.getElementById('1stNumber').value;
+        let num2 = +document.getElementById('2ndNumber').value;
+        document.getElementById('result').innerHTML = `${num1}*${num2} = ${num1 * num2}`;
+    }
+
+
+</script>
+
+<body>
+
+    <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%,-50%);">
+        <label for='1stNumber'>1st Number : </label>
+        <input type="text" id="1stNumber" name="1stNumber"><br><br>
+        <label for='2ndNumber'>2nd Number : </label>
+        <input type="text" id="2ndNumber" name="2ndNumber"><br><br>
+        <button id='multive' onclick="multiple()">Multiply</button>
+        <button id='division' onclick="division()"> Division</button>
+        <br><br>
+        <p id='result'></p>
+    </div>
+</body>
+
+</html>
