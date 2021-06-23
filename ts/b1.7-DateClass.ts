@@ -1,4 +1,4 @@
-class date{
+class MDate{
   private day: number;
   private month: number;
   private year: number;

@@ -1,10 +1,10 @@
-class MyPoint {
+class Point2D {
   private x: number = 0;
   private y: number = 0;
 
   constructor(x?: number, y?: number) {
-    this.x = x;
-    this.y = y;
+    this.x = x ? x : 0;
+    this.y = y ? y : 0;
   }
 
   getX(): number {
@@ -29,7 +29,6 @@ class MyPoint {
     this.x = x;
     this.y = y;
   }
-
   distance(another?: MyPoint, x?: number, y?: number): number {
     if (another)
       return Math.sqrt(
@@ -40,5 +39,34 @@ class MyPoint {
   }
   toString(): string {
     return ` number(${this.x} ${this.y})`;
+  }
+}
+
+class Point3D extends Point2D {
+  private z: number = 0;
+
+  constructor(x?: number, y?: number, z?: number) {
+    super(x, y);
+    this.z = z ? z : 0;
+  }
+  getZ(): number {
+    return this.z;
+  }
+
+  setZ(z: number) {
+    this.z = z;
+  }
+
+  getXYZ(): number[] {
+    return [...this.getXY(), this.z];
+  }
+  setXYZ(x: number, y: number, z: number) {
+    this.setX(x);
+    this.setY(y);
+    this.z = z;
+  }
+
+  toString(): string {
+    return `{${this.getX()},${this.getY()}, ${this.z}}`;
   }
 }
