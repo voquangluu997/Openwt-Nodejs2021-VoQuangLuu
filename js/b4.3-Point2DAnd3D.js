@@ -1,9 +1,9 @@
-class MyPoint {
+class Point2D {
     constructor(x, y) {
         this.x = 0;
         this.y = 0;
-        this.x = x;
-        this.y = y;
+        this.x = x ? x : 0;
+        this.y = y ? y : 0;
     }
     getX() {
         return this.x;
@@ -33,5 +33,29 @@ class MyPoint {
     }
     toString() {
         return ` number(${this.x} ${this.y})`;
+    }
+}
+class Point3D extends Point2D {
+    constructor(x, y, z) {
+        super(x, y);
+        this.z = 0;
+        this.z = z ? z : 0;
+    }
+    getZ() {
+        return this.z;
+    }
+    setZ(z) {
+        this.z = z;
+    }
+    getXYZ() {
+        return [...this.getXY(), this.z];
+    }
+    setXYZ(x, y, z) {
+        this.setX(x);
+        this.setY(y);
+        this.z = z;
+    }
+    toString() {
+        return `{${this.getX()},${this.getY()}, ${this.z}}`;
     }
 }
